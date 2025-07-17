@@ -22,7 +22,7 @@ const ViewStudentsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/students")
+    fetch(`${API_BASE_URL}/api/students`)   
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch student data.");
         return res.json();

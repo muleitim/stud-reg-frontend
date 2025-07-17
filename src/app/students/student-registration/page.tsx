@@ -27,6 +27,9 @@ const tailFormItemLayout = {
 };
 
 const StudentRegistration: React.FC = () => {
+
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
 
@@ -51,7 +54,7 @@ const StudentRegistration: React.FC = () => {
         return;
       }
 
-      const res = await axios.post("http://localhost:5000/api/register-student", formData, {
+      const res = await axios.post(`${API_BASE_URL}/api/register-student`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
