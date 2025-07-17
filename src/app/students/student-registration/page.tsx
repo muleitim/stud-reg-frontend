@@ -50,7 +50,7 @@ const StudentRegistration: React.FC = () => {
       if (fileList.length > 0) {
         formData.append("student-photo", fileList[0] as any);
       } else {
-        message.error("Please upload a photo.");
+        message.error("Please upload student photo.");
         return;
       }
 
